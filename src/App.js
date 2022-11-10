@@ -10,7 +10,7 @@ const App = () => {
   const [monsters, setMonsters] = useState([]);
   const [filteredMonsters, setFilteredMonsters] = useState(monsters);
 
-  console.log('gfdsgfds');
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(respone => respone.json())
@@ -22,6 +22,7 @@ const App = () => {
     const newFilteredMonsters = monsters.filter((monster) => {
       return monster.name.toLowerCase().includes(searchField);
     });
+    console.log('render');
 
     setFilteredMonsters(newFilteredMonsters);
 
